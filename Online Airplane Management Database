@@ -1,0 +1,775 @@
+USE airlinedatabases
+CREATE TABLE [dbo].[Airport](
+  [AirportCode][int] NOT NULL,
+	[City] [char] (20) NULL,
+	[Country] [char] (20) NULL,
+	[FlightCode] [char] (20) NULL
+)ON [PRIMARY]
+CREATE TABLE [dbo]. [Anchor] (
+	[AirportCode) [int) NOT NULL,
+	[FlightCode] [char] (20) NOT NULL
+) ON [PRIMARY]
+CREATE TABLE [dbo] . [Flight] (
+	[FiightCode] [char] (20) NOT NULL,
+	[AirplaneName][char] (20) NULL,
+	[Airplanecode][char] (10) NULL,
+	[DepatureTime] [time] (7) NULL,
+	[ArrivalTime] [time] (7) NULL,
+	[TravelTime] [float] NULL,
+	[DepatureAirport] [char] (20) NULL,
+	[ArrivalAirport] [char] (20) NULL,
+	[Fare] [float] NULL,
+	[DepatureDate] [date] NULL,
+	[ArrivalDate] [date] NULL
+)	ON [PRIMARY]
+CREATE TABLE [dbo] .[Order] (
+	[orderNumber] [nchar] (20) NOT NULL,
+	[startCity] [nchar] (20) NULL,
+	[endCity] [nchar] (20) NULL,
+	[price] [float] NULL,
+	[startAirport] [nchar] (20) NULL,
+	[endAirport][nchar] (20) NULL,
+	[startDace] [date] NULL,
+	[startTime] [time] (7) NULL,
+	[endDate] [date] NULL,
+	[endTime] [time] (7) NULL,
+	[seatType] [nchar] (20) NULL,
+CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED
+(
+	[orderNumber] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+CREATE TABLE [dbo].[Passenger] (
+	[PassportNumber] [char] (20) NOT NULL ,
+	[Name] [char] (10) NULL,
+	[IDNumber] [char] (18) NULL ,
+	[PhoneNumber] [char] (20) NULL
+)ON [PRIMARY]
+CREATE TABLE [dbo]. [Airline] (
+ [OwnDiscount] [int] NOT NULL,
+ [AirlanName] [char] (40) NOT NULL
+) ON [PRIMARY]
+CREATE TABLE [dbo].[Airplane] (
+[AircraftNumber] [character](20) NOT NULL ,
+[AircraftType] [character] (20) NULL,
+)ON [PRIMARY]
+CREATE TABLE [dbo].[Seat] (
+[NumberStatus] [integer] NOT NULL ,
+[Type] [character] (20) NULL,
+[Status] [integer]  NULL ,
+)ON [PRIMARY]
+CREATE TABLE [dbo].[useraccount] (
+[username] [character] (20)NOT NULL ,
+[password] [character] (20) NULL
+)ON [PRIMARY]
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('578dd','b-965');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('635dd','b-757');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('734dd','b-657');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('134dd','b-627');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('635dd','b-627');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('234dd','b-757');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('364dd','b-887');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('944dd','b-888');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('344dd','b-772');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('84d5d','b-727');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('334dd','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('13d4d','b-777');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34dd',' b-7744');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('341dd2','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('4314dd','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('354d4d','b-774');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('3741dd','b-744');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('5840','Mumbai','India ','dhsbgf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('5840','Lanka','Srilanka','dhsbgf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('58540','Algiers','Algeria','dhsbgf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('47894','Luanda','Angola','jausgi');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('78493','Vienna','Austria','rgeghi');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('98495','Brussels','Belgium','werssg');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('78742','Thimphu','Bhutan','xtrdyh');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('35776','Brasilia','Brazil','qgfrnb');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('25497','Sofia','Bulgaria','ndrtsg');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('98495','Moroni','Comoros','pouidg');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('35468','Havana','Cuba','asxgre');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('95745','Cairo','Egypt','veszra');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('96264','Tallinn','Estonia','hdrdrt');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('76499','Beijing','China','qgbtyh');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('98764','Santiago','Chile','mtcfyu');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('78652','Bogota','Colombia','xcvgrd');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('35445','Berlin','Germany','adfvvb');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('46786','Accra','Ghana','btrhsa');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('24578','Dhaka','Bangladesh','uihlh');
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','china southen','44ddw','10:34:09 AM','7:04:09 AM','3.2','bejing','wuhan','342.3','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','Eastern Airlines','46tgf','6:3:09 AM','9:04:09 PM','5.6','Wuhan','Guangzhou','342.3','1-28-2021','1-28-2021');
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','china southen','44ddw','10:34:09 AM','7:04:09 AM','3.2','bejing','wuhan','342.3','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','Eastern Airlines','46tgf','6:3:09 AM','9:04:09 PM','5.6','Wuhan','Guangzhou','342.3','1-28-2021','1-28-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('KLHL','china southen','44ddw','10:34:09 PM','7:04:09 AM','1.5','Wuhan','Beijing','342.3','6-2-2021','6-28-2021');
+
+
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('KHFG','KD Airline','16tjh','7:34:09 PM','1:04:09 PM','6.2','Wuhan','Lasa','342.3','8-28-2021','8-28-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate)
+VALUES ('DFWD','NAtive Thai','152gf','10:34:09 AM','12:01:09 AM','3.2','Wuhan','Kunming','342.3','5-8-2021','5 -8-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('SGGV','china southen','479DER','10:34:09 AM','3:02:09 PM','3.2','Wuhan','Pakisthan','342.3','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('JGKBN','Scot Aiorline','496dw','10:34:09 AM','2:04:01 AM','3.2','Wuhan','Bali','342.3','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('KJHKD',' Air Machigan','46mc','6:34:02 PM','9:04:09 AM','3.2','Wuhan','Wachington','4569.3','6-9-2021','6-9-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('SDGRF','Air Beijing','BJ454','1:34:09 PM','10:04:09 PM','3.2','Wuhan','Beijing','342.3','5-12-2021','5-12-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('DSRGFD','US Bangla','Boeng178','1:00:00 AM','3:00:00 AM','3.2','Wuhan','Dhaka','3752.3','1-28-2021','1-28-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','china southen','44ddw','10:34:09 AM','10:04:09 AM','3.2','Wuhan','Shanghai','342.3','5-8-2021','5 -8-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate)
+VALUES ('DFWD','NAtive Thai','152gf','10:34:09 AM','7:04:09 AM','3.2','Wuhan','Kunming','342.3','5-8-2021','5 -8-2021')
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','China southen','44ddw','10:34:09 AM','7:04:09 AM','3.2','Wuhan','Kalkatta','342.3','12-28-2021','12-28-2021');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('IG-36523','PARVEZ','493882IY','7955335');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('ET-4245','MAMUN','493882NJD','5658375');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('XY-S45W62','TOMOY','493882NJD','57643');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('WC-4567','MAMUN','493882NJD','96876553');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('HY-553G','PIAS','493882NJD','36756453');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('QH-CE5B35','ZUBAYER','493882NJD','3865645');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('TE-53B55','SARKAR','493882NJD','8675453');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('GH-AD56B53','KHAN','493882NJD','675646756');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('GE-56563','ZAHIN','493882NJD','87564556');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('TG-5645','BRTAR','493882NJD','678675436');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('YU-EAD6G3G','MADHARCHUD','493882NJD','47865746');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('ET-87785','MAGIBETI','493882NJD','5768786');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('CN-NM3','SCHODI','493882NJD','86756466');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('AS-5356B','IEKSSS','493882NJD','7564567');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('IE-BVB','EMON','493882NJD','8675646735');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('EA-3355','NAIKHAN','493882NJD','857645365');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('EE-3VBN','AMIN KHAN','493882NJD','646537876');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('DF-EAA36GV','JAMIN KHAN','493882NJD','8675645656');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('1','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('2','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('3','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('4','BUSNIESS-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('5','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('6','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('7','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('10','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('11','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('12','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('13','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('14','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('15','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('16','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('17','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('18','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('19','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('20','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('21','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('22','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('23','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('24','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('25','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('26','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('27','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('28','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('29','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('30','ECONOMY-CLASS','2');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3', 'American Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('1', 'Singapore Airline');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Delta Air Lines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('22','Frontier Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('4','Hawaiian Airlines	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('10','Air China');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','China Eastern Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Hainan Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('21','Shenzhen Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('12','Sichuan Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('1','XiamenAir');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('00','Jetstar Asia Airways');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Scoot Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('13','Thai Airline	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5', 'China Southern Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('6','Biman Bangladesh Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('9','US-Bangla Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('11','Regent Airways');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('8','Novoair');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('2','IndiGo');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5','GoAir');
+INSERT INTO dbo.useraccount(username ,password) VALUES('alex','china223');
+INSERT INTO dbo.useraccount(username ,password) VALUES('john','nihao454');
+INSERT INTO dbo.useraccount(username ,password) VALUES('zahin','vv3y4by5');
+INSERT INTO dbo.useraccount(username ,password) VALUES('parvez','1911562106');
+INSERT INTO dbo.useraccount(username ,password) VALUES('oias','3b56bg65');
+INSERT INTO dbo.useraccount(username ,password) VALUES('pias','3b65bb5b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('amin','b36v56b');
+INSERT INTO dbo.useraccount(username ,password) VALUES(''rashid','1811562126');
+INSERT INTO dbo.useraccount(username ,password) VALUES('kamal','5n7b6n');
+INSERT INTO dbo.useraccount(username ,password) VALUES('laoshi','b35b76');
+INSERT INTO dbo.useraccount(username ,password) VALUES('santi','b453636v');
+INSERT INTO dbo.useraccount(username ,password) VALUES('lalamia','3nb6bn');
+INSERT INTO dbo.useraccount(username ,password) VALUES('kemonkhan','3b56v');
+INSERT INTO dbo.useraccount(username ,password) VALUES('amitumi','64363b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('misha','356bn4');
+INSERT INTO dbo.useraccount(username ,password) VALUES('sony','5b6575456');
+INSERT INTO dbo.useraccount(username ,password) VALUES('sayem','b63b64b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('nasim','4b566b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('shihab','4b3v476');
+INSERT INTO dbo.useraccount(username ,password) VALUES('nahim','67nb547n6b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('moon','7587g57');
+SELECT TOP (1000) [AircraftNumber]
+      ,[AircraftType]
+  FROM [AirportDatabase].[dbo].[Airplane]
+SELECT TOP (1000) [AirportCode]
+      ,[City]
+      ,[Country]
+      ,[FlightCode]
+  FROM [AirportDatabase].[dbo].[Airport]
+SELECT TOP (1000) [FiightCode]
+      ,[AirplaneName]
+      ,[Airplanecode]
+      ,[DepatureTime]
+      ,[ArrivalTime]
+      ,[TravelTime]
+      ,[DepatureAirport]
+      ,[ArrivalAirport]
+      ,[Fare]
+      ,[DepatureDate]
+      ,[ArrivalDate]
+  FROM [AirportDatabase].[dbo].[Flight]
+SELECT TOP (1000) [PassportNumber]
+      ,[Name]
+      ,[IDNumber]
+      ,[PhoneNumber]
+  FROM [AirportDatabase].[dbo].[Passenger]
+SELECT TOP (1000) [NumberStatus]
+      ,[Type]
+      ,[Status]
+  FROM [AirportDatabase].[dbo].[Seat]
+SELECT TOP (1000) [username]
+      ,[password]
+  FROM [AirportDatabase].[dbo].[useraccount]
+SELECT [username]
+      ,[password]
+FROM [dbo].[useraccount]
+where username='Shafayet' and password='1911562124';
+SELECT TOP (1000) [FiightCode]
+      ,[AirplaneName]
+      ,[Airplanecode]
+      ,[DepatureTime]
+      ,[ArrivalTime]
+  
+      FROM [AirportDatabase].[dbo].[Flight]
+SELECT TOP (1000) [AirportCode]
+      ,[City]
+      ,[Country]
+      ,[FlightCode]
+  FROM [AirportDatabase].[dbo].[Airport]
+SELECT TOP (1000) [PassportNumber]
+      ,[Name]
+      ,[IDNumber]
+      ,[PhoneNumber]
+  FROM [AirportDatabase].[dbo].[Passenger]
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5','Beijing Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('1','American Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Delta Air Lines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('22','Frontier Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Scoot');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('13','SilkAir	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5','Singapore Airlines	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('6','Biman Bangladesh Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('9','US-Bangla Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('11','Regent Airways');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('00','Jetstar Asia Airways');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Scoot');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('13','SilkAir	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5','Singapore Airlines	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('6','Biman Bangladesh Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('9','US-Bangla Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','China Eastern Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Hainan Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('21','Shenzhen Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('12','Sichuan Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('1','XiamenAir');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('4','Hawaiian Airlines');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('1','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('2','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('3','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('4','BUSNIESS-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('5','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('6','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('7','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('10','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('11','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('12','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('13','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('14','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('15','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('16','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('17','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('18','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('19','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('20','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('21','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('22','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('23','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('24','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('25','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('26','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('27','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('28','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('29','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('30','ECONOMY-CLASS','2');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('635dd','b-627');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('234dd','b-757');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('364dd','b-887');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('944dd','b-888');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('344dd','b-772');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('84d5d','b-727');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('334dd','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('13d4d','b-777');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('344dd','b-772');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34d5d','b-727');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('434dd','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('134d4d','b-777');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34dd', 'b-7744');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('341dd2','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('3314dd','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34d4d','b-774');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('541dd','b-7447');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('344dd','b-7744');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34dd','b-7733');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34dd','b-744');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('5840','Mumbai','India ','dhsbgf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('5840','Lanka','Srilanka','dhsbgf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('58540','Algiers','Algeria','dhsbgf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('47894','Luanda','Angola','jausgi');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('78493','Vienna','Austria','rgeghi');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('98495','Brussels','Belgium','werssg');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('78742','Thimphu','Bhutan','xtrdyh');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('35776','Brasilia','Brazil','qgfrnb');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('25497','Sofia','Bulgaria','ndrtsg');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('98495','Moroni','Comoros','pouidg');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('35468','Havana','Cuba','asxgre');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('95745','Cairo','Egypt','veszra');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('96264','Tallinn','Estonia','hdrdrt');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('76499','Beijing','China','qgbtyh');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('98764','Santiago','Chile','mtcfyu');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('78652','Bogota','Colombia','xcvgrd');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('35445','Berlin','Germany','adfvvb');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('46786','Accra','Ghana','btrhsa');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('24578','Dhaka','Bangladesh','uihlh');
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','china southen','44ddw','10:34:09 AM','7:04:09 AM','3.2','bejing','wuhan','342.3','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','Eastern Airlines','46tgf','6:3:09 AM','9:04:09 PM','5.6','Wuhan','Guangzhou','342.3','1-28-2021','1-28-2021');
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','china southen','44ddw','10:34:09 AM','7:04:09 AM','3.2','bejing','wuhan','342.3','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','Eastern Airlines','46tgf','6:3:09 AM','9:04:09 PM','5.6','Wuhan','Guangzhou','342.3','1-28-2021','1-28-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('KLHL','china southen','44ddw','10:34:09 PM','7:04:09 AM','1.5','Wuhan','Beijing','342.3','6-2-2021','6-28-2021');
+
+
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('KHFG','KD Airline','16tjh','7:34:09 PM','1:04:09 PM','6.2','Wuhan','Lasa','342.3','8-28-2021','8-28-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate)
+VALUES ('DFWD','NAtive Thai','152gf','10:34:09 AM','12:01:09 AM','3.2','Wuhan','Kunming','342.3','5-8-2021','5 -8-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('SGGV','china southen','479DER','10:34:09 AM','3:02:09 PM','3.2','Wuhan','Pakisthan','342.3','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('JGKBN','Scot Aiorline','496dw','10:34:09 AM','2:04:01 AM','3.2','Wuhan','Bali','342.3','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('KJHKD',' Air Machigan','46mc','6:34:02 PM','9:04:09 AM','3.2','Wuhan','Wachington','4569.3','6-9-2021','6-9-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('SDGRF','Air Beijing','BJ454','1:34:09 PM','10:04:09 PM','3.2','Wuhan','Beijing','342.3','5-12-2021','5-12-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('DSRGFD','US Bangla','Boeng178','1:00:00 AM','3:00:00 AM','3.2','Wuhan','Dhaka','3752.3','1-28-2021','1-28-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','china southen','44ddw','10:34:09 AM','10:04:09 AM','3.2','Wuhan','Shanghai','342.3','5-8-2021','5 -8-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate)
+VALUES ('DFWD','NAtive Thai','152gf','10:34:09 AM','7:04:09 AM','3.2','Wuhan','Kunming','342.3','5-8-2021','5 -8-2021')
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','China southen','44ddw','10:34:09 AM','7:04:09 AM','3.2','Wuhan','Kalkatta','342.3','12-28-2021','12-28-2021');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('IG-36523','PARVEZ','493882IY','7955335');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('ET-4245','MAMUN','493882NJD','5658375');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('XY-S45W62','TOMOY','493882NJD','57643');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('WC-4567','MAMUN','493882NJD','96876553');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('HY-553G','PIAS','493882NJD','36756453');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('QH-CE5B35','ZUBAYER','493882NJD','3865645');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('TE-53B55','SARKAR','493882NJD','8675453');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('GH-AD56B53','KHAN','493882NJD','675646756');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('GE-56563','ZAHIN','493882NJD','87564556');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('TG-5645','BRTAR','493882NJD','678675436');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('YU-EAD6G3G','MADHARCHUD','493882NJD','47865746');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('ET-87785','MAGIBETI','493882NJD','5768786');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('CN-NM3','SCHODI','493882NJD','86756466');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('AS-5356B','IEKSSS','493882NJD','7564567');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('IE-BVB','EMON','493882NJD','8675646735');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('EA-3355','NAIKHAN','493882NJD','857645365');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('EE-3VBN','AMIN KHAN','493882NJD','646537876');
+INSERT INTO dbo.Passenger(PassportNumber,Name,IDNumber,PhoneNumber)  VALUES ('DF-EAA36GV','JAMIN KHAN','493882NJD','8675645656');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('1','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('2','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('3','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('4','BUSNIESS-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('5','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('6','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('7','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('10','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('11','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('12','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('13','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('14','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('15','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('16','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('17','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('18','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('19','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('20','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('21','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('22','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('23','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('24','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('25','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('26','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('27','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('28','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('29','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('30','ECONOMY-CLASS','2');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3', 'American Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('1', 'Singapore Airline');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Delta Air Lines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('22','Frontier Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('4','Hawaiian Airlines	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('10','Air China');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','China Eastern Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Hainan Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('21','Shenzhen Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('12','Sichuan Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('1','XiamenAir');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('00','Jetstar Asia Airways');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Scoot Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('13','Thai Airline	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5', 'China Southern Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('6','Biman Bangladesh Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('9','US-Bangla Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('11','Regent Airways');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('8','Novoair');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('2','IndiGo');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5','GoAir');
+INSERT INTO dbo.useraccount(username ,password) VALUES('alex','china223');
+INSERT INTO dbo.useraccount(username ,password) VALUES('john','nihao454');
+INSERT INTO dbo.useraccount(username ,password) VALUES('zahin','vv3y4by5');
+INSERT INTO dbo.useraccount(username ,password) VALUES('parvez','1911562106');
+INSERT INTO dbo.useraccount(username ,password) VALUES('oias','3b56bg65');
+INSERT INTO dbo.useraccount(username ,password) VALUES('pias','3b65bb5b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('amin','b36v56b');
+INSERT INTO dbo.useraccount(username ,password) VALUES(''rashid','1811562126');
+INSERT INTO dbo.useraccount(username ,password) VALUES('kamal','5n7b6n');
+INSERT INTO dbo.useraccount(username ,password) VALUES('laoshi','b35b76');
+INSERT INTO dbo.useraccount(username ,password) VALUES('santi','b453636v');
+INSERT INTO dbo.useraccount(username ,password) VALUES('lalamia','3nb6bn');
+INSERT INTO dbo.useraccount(username ,password) VALUES('kemonkhan','3b56v');
+INSERT INTO dbo.useraccount(username ,password) VALUES('amitumi','64363b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('misha','356bn4');
+INSERT INTO dbo.useraccount(username ,password) VALUES('sony','5b6575456');
+INSERT INTO dbo.useraccount(username ,password) VALUES('sayem','b63b64b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('nasim','4b566b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('shihab','4b3v476');
+INSERT INTO dbo.useraccount(username ,password) VALUES('nahim','67nb547n6b');
+INSERT INTO dbo.useraccount(username ,password) VALUES('moon','7587g57');
+SELECT TOP (1000) [AircraftNumber]
+      ,[AircraftType]
+  FROM [AirportDatabase].[dbo].[Airplane]
+SELECT TOP (1000) [AirportCode]
+      ,[City]
+      ,[Country]
+      ,[FlightCode]
+  FROM [AirportDatabase].[dbo].[Airport]
+SELECT TOP (1000) [FiightCode]
+      ,[AirplaneName]
+      ,[Airplanecode]
+      ,[DepatureTime]
+      ,[ArrivalTime]
+      ,[TravelTime]
+      ,[DepatureAirport]
+      ,[ArrivalAirport]
+      ,[Fare]
+      ,[DepatureDate]
+      ,[ArrivalDate]
+  FROM [AirportDatabase].[dbo].[Flight]
+SELECT TOP (1000) [PassportNumber]
+      ,[Name]
+      ,[IDNumber]
+      ,[PhoneNumber]
+  FROM [AirportDatabase].[dbo].[Passenger]
+SELECT TOP (1000) [NumberStatus]
+      ,[Type]
+      ,[Status]
+  FROM [AirportDatabase].[dbo].[Seat]
+SELECT TOP (1000) [username]
+      ,[password]
+  FROM [AirportDatabase].[dbo].[useraccount] 
+SELECT [username]
+      ,[password]
+FROM [dbo].[useraccount]
+where username='shafayet' and password='1911562124';
+SELECT TOP (1000) [FiightCode]
+      ,[AirplaneName]
+      ,[Airplanecode]
+      ,[DepatureTime]
+      ,[ArrivalTime]
+  
+      FROM [AirportDatabase].[dbo].[Flight]
+SELECT TOP (1000) [AirportCode]
+      ,[City]
+      ,[Country]
+      ,[FlightCode]
+  FROM [AirportDatabase].[dbo].[Airport]
+SELECT TOP (1000) [PassportNumber]
+      ,[Name]
+      ,[IDNumber]
+      ,[PhoneNumber]
+  FROM [AirportDatabase].[dbo].[Passenger]
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5','Beijing Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('1','American Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Delta Air Lines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('22','Frontier Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Scoot');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('13','SilkAir	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5','Singapore Airlines	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('6','Biman Bangladesh Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('9','US-Bangla Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('11','Regent Airways');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('00','Jetstar Asia Airways');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Scoot');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('13','SilkAir	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('5','Singapore Airlines	');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('6','Biman Bangladesh Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('9','US-Bangla Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','China Eastern Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('3','Hainan Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('21','Shenzhen Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('12','Sichuan Airlines');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('1','XiamenAir');
+INSERT INTO dbo.Airline(OwnDiscount,AirlanName) VALUES ('4','Hawaiian Airlines');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('1','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('2','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('3','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('4','BUSNIESS-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('5','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('6','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('7','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('10','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('11','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('12','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('13','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('14','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('15','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('16','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('17','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('18','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('19','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('20','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('21','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('22','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('23','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('24','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('25','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('26','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('27','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('28','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('29','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('30','ECONOMY-CLASS','2');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('635dd','b-627');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('234dd','b-757');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('364dd','b-887');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('944dd','b-888');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('344dd','b-772');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('84d5d','b-727');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('334dd','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('13d4d','b-777');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('344dd','b-772');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34d5d','b-727');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('434dd','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('134d4d','b-777');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34dd', 'b-7744');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('341dd2','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('3314dd','b-747');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34d4d','b-774');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('541dd','b-7447');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('344dd','b-7744');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34dd','b-7733');
+INSERT INTO dbo.Airplane(AircraftNumber,AircraftType) VALUES('34dd','b-744');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('5840','Newyork','America','hiolggf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('5840','Beijing','China ','dhsbgf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('95745','Cairo','Egypt','veszra');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('96264','Tallinn','Estonia','hdrdrt');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('76499','Beijing','China','qgbtyh');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('98764','Santiago','Chile','mtcfyu');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('78652','Bogota','Colombia','xcvgrd');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('35445','Berlin','Germany','adfvvb');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('46786','Accra','Ghana','btrhsa');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('24578','Dhaka','Bangladesh','uihlh');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('5840','Lanka','Srilanka','dhsbgf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('58540','Algiers','Algeria','dhsbgf');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('47894','Luanda','Angola','jausgi');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('78493','Vienna','Austria','rgeghi');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('98495','Brussels','Belgium','werssg');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('78742','Thimphu','Bhutan','xtrdyh');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('35776','Brasilia','Brazil','qgfrnb');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('25497','Sofia','Bulgaria','ndrtsg');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('98495','Moroni','Comoros','pouidg');
+INSERT INTO dbo.Airport(AirportCode,City,Country,FlightCode) VALUES ('35468','Havana','Cuba','asxgre');
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('DJHFD','china Airways','44ddw','10:34:09 AM','7:04:09 AM','12.2','Shandong','Sichuan','242.1','1-28-2020','1-28-2020');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('OTFN','Air India','46tgf','6:3:09 AM','9:04:09 PM','5.6','Mumbai','Guangzhou','162.4','1-28-2020','1-28-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('SSGP','Scott Airlines','44ddw','10:34:09 AM','2:04:09 PM','4.00','Bejing','Singapore','235.3','5-28-2020','5-29-2020');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('SXGH','Thai Airline','46tgf','6:3:09 AM','9:04:09 PM','5.6','Thailand','Guangzhou','282.8','9-15-2020','9-16-2020');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('KLHL','China southen','44ddw','10:34:09 PM','7:04:09 AM','9.5','France','Beijing','245.5','6-27-2020','6-27-2020');
+
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate)
+VALUES ('DFWD','NAtive Thai','152gf','10:34:09 AM','12:01:09 AM','3.2','Malayshia','Kunming','342.4','5-8-2021','5 -8-2021');
+
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('KHFG','KD Airline','16tjh','7:34:09 PM','1:04:09 PM','6.2','Wuhan','Lasa','310.3','8-28-2021','8-28-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate)
+VALUES ('DFWD','NAtive Thai','152gf','10:34:09 AM','12:01:09 AM','3.2','Malayshia','Kunming','312.3','5-8-2021','5 -8-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('SGGV','china southen','479DER','10:34:09 AM','3:02:09 PM','3.2','Wuhan','Pakisthan','143.3','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('JGKBN','Scot Aiorline','496dw','10:34:09 AM','2:04:01 AM','3.2','Bangladesh','Bali','141.2','1-28-2021','1-28-2018');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('KJHKD',' Air Machigan','46mc','6:34:02 PM','9:04:09 AM','3.2','Wuhan','Washington','299.8','6-9-2021','6-9-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('SDGRF','Air Beijing','BJ454','1:34:09 PM','10:04:09 PM','3.2','Wuhan','Beijing','120.5','5-12-2021','5-12-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('DSRGFD','US Bangla','Boeng178','1:00:00 AM','3:00:00 AM','3.2','Nepal','Dhaka','372.6','1-28-2021','1-28-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','china southen','44ddw','10:34:09 AM','10:04:09 AM','3.2','Hunan','Shanghai','342.1','5-8-2021','5 -8-2021');
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate)
+VALUES ('DFWD','NAtive Thai','152gf','10:34:09 AM','7:04:09 AM','3.2','Nepal','Kunming','124.3','5-8-2021','5 -8-2021')
+
+INSERT INTO dbo.Flight(FiightCode,AirplaneName,Airplanecode,DepatureTime,ArrivalTime,TravelTime,DepatureAirport,ArrivalAirport,Fare,DepatureDate,ArrivalDate) 
+VALUES ('FFES','Us bangla','44ddw','10:34:09 AM','7:04:09 AM','3.2','Dubai','Kalkatta','332.3','12-28-2021','12-28-2021');
+SELECT City         
+      ,[Country]
+      ,[FlightCode]
+from .[dbo].[Airport]
+
+  WHERE City='Beijing   ' 
+  AND Country =' China  ' 
+  OR FlightCode ='qgbtyh   '
+SELECT [DepatureAirport]	 
+        ,[ArrivalAirport]
+	  ,[DepatureDate]
+      ,[AirplaneName]
+      ,[Fare]
+  FROM [dbo].[Flight]
+  WHERE DepatureAirport=' Beijing ' 
+		AND ArrivalAirport=' Singapore ' 
+		AND DepatureDate=''5-28-2020' 
+		OR AirplaneName='Scott Airlines'
+		AND Fare<400;
+SELECT PassportNumber
+  ,[Name]
+  ,[IDNumber]
+        ,[PhoneNumber]
+   
+  FROM [dbo].[Passenger]
+  WHERE PassportNumber='IG-36523 ' 
+  AND Name=' PARVEZ ' 
+  OR IDNumber='493882IY'
+  AND PhoneNumber ='7955335'
+SELECT OwnDiscount        
+      ,[AirlanName]
+      
+from .[dbo].[Airline]
+
+  WHERE OwnDiscount='3  ' 
+  AND  AirlanName= 'Scoot Airlines'
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('10','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('11','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('12','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('13','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('14','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('15','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('16','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('17','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('18','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('19','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('20','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('21','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('22','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('23','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('24','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('25','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('26','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('27','ECONOMY-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('28','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('29','ECONOMY-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('30','ECONOMY-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('1','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('2','BUSNIESS-CLASS','1');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('3','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('4','BUSNIESS-CLASS','3');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('5','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('6','BUSNIESS-CLASS','2');
+INSERT INTO dbo.Seat(NumberStatus,Type,Status) VALUES ('7','BUSNIESS-CLASS','1');
+SELECT [DepatureAirport]
+	  ,[ArrivalAirport]
+	  ,[DepatureDate]
+      ,[AirplaneName]
+      ,[Fare]
+  FROM .[dbo].[Flight]
+  WHERE DepatureAirport='bejing' 
+		AND ArrivalAirport='wuhan' 
+		AND Depaturedate='2021-01-28' 
+		OR AirplaneName='china southen'
+		AND Fare<400;
